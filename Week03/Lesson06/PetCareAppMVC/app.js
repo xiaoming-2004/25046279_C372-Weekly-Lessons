@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const flash = require('connect-flash');
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // View Engine and Middleware
 app.set('view engine', 'ejs');
