@@ -40,6 +40,7 @@
               <th scope="col">Price</th>
               <th scope="col">Booking Status</th>
               <th scope="col">Payment Status</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +57,21 @@
                     <span class="badge text-bg-secondary"><%= bookings[i].payment_status %></span>
                   <% } else { %>
                     <span class="text-secondary">No payment record</span>
+                  <% } %>
+                </td>
+                <td>
+                  <% if (String(bookings[i].booking_status).toLowerCase() === 'pending') { %>
+                    <form action="/payments/mock/<%= bookings[i].booking_id %>" method="POST" class="d-flex flex-wrap gap-2">
+                      <select name="testStatus" class="form-select form-select-sm" aria-label="Simulated payment result">
+                        <option value="RANDOM">Random outcome</option>
+                        <option value="APPROVED">Approved</option>
+                        <option value="PENDING">Pending</option>
+                        <option value="DECLINED">Declined</option>
+                      </select>
+                      <button type="submit" class="btn btn-sm btn-primary text-nowrap">Process mock payment</button>
+                    </form>
+                  <% } else { %>
+                    <span class="text-secondary">Processed</span>
                   <% } %>
                 </td>
               </tr>

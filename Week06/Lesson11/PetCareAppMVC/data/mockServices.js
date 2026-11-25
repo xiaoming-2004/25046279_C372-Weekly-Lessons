@@ -1,7 +1,6 @@
-const mockServices = [
-  { serviceId: 1, serviceName: 'Vaccination', price: 35 },
-  { serviceId: 2, serviceName: 'Pet Grooming', price: 50 },
-  { serviceId: 3, serviceName: 'Boarding', price: 80 }
-];
-
-module.exports = mockServices;
+// data/mockServices.js
+ module.exports = [
+   { id: 1, name: 'Vaccination', price: 35.00 },
+   { id: 2, name: 'Pet Grooming', price: 50.00 },
+   { id: 3, name: 'Boarding', price: 80.00 }
+ ];

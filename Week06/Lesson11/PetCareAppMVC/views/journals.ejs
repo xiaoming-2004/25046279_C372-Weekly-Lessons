@@ -71,6 +71,9 @@
 
     <a href="/journals/new" class="btn btn-success mb-3">+ Add New Entry</a>
     <a href="/pets/new" class="btn btn-outline-secondary mb-3">+ Add New Pet</a>
+    <% if (pet) { %>
+      <a href="/services?petId=<%= pet.id %>" class="btn btn-outline-primary mb-3">Book a Service for <%= pet.name %></a>
+    <% } %>
 
 
     <table class="table table-bordered table-striped">
